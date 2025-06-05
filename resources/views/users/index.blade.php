@@ -16,6 +16,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Roles</th>
                 <th scope="col">Action</th>
+                <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,7 +32,7 @@
                         @endforelse
                     </td>
                     <td>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                        <form action="{{ route('users.destroy', $user->id) }}" method="post"class="d-inline">
                             @csrf
                             @method('DELETE')
 
@@ -54,7 +55,26 @@
                             @endif
 
                         </form>
+						<form action="{{ route('users.toggleStatus', $user->id) }}" method="POST" class="d-inline">
+							@csrf
+							@method('PATCH')
+							@php
+								$btnClass = 'btn btn-sm btn-warning ';
+								$btnClass .= $user->status ? 'bg-success' : 'bg-danger';
+								$btnClass .= $user->hasRole('Super Admin') ? ' disabled' : '';
+							@endphp
+							<button class="{{ $btnClass }}" onclick="return confirm('Do you want to {{ $user->status ? 'inactivate' : 'activate' }} this user?');">
+								{{ $user->status ? 'Inactivate' : 'Activate' }}
+							</button>
+						</form>
                     </td>
+					 <td>
+						@if($user->status)
+							<span class="badge bg-success">Active</span>
+						@else
+							<span class="badge bg-danger">Inactive</span>
+						@endif
+					</td>
                 </tr>
                 @empty
                     <td colspan="5">

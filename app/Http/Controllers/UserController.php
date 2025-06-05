@@ -125,4 +125,18 @@ class UserController extends Controller
         return redirect()->route('users.index')
                 ->withSuccess('User is deleted successfully.');
     }
+	
+   public function toggleStatus($id)
+	{
+		$user = User::findOrFail($id);
+		
+		if ($user->hasRole('Super Admin') && $user->status == 1) {
+			return redirect()->back()->withSuccess('You cannot deactivate a Super Admin user.');
+		}
+		
+		$user->status = !$user->status; 
+		$user->save();
+
+		return redirect()->back()->withSuccess('success', 'User status updated successfully.');
+	}
 }
