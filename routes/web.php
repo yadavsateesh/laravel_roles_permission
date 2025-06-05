@@ -37,5 +37,16 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+//Route::get('/check-user-status', [UserController::class, 'checkStatus'])->name('check-user-status');
+Route::get('/check-user-status', [UserController::class, 'checkStatus'])->name('check.user.status');
+
+
+//Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::post('/users-list', [UserController::class, 'userList'])->name('users.list');
+
+// Optional: For action routes
+/* Route::resource('users', UserController::class);
+Route::patch('/users/{id}/toggle-status', [UserController::class, 'toggleStatus'])->name('users.toggleStatus'); */
+
 
 

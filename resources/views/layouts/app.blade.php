@@ -13,7 +13,12 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+	
     <!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -99,3 +104,37 @@
     </div>
 </body>
 </html>
+
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    setInterval(function () {
+    $.ajax({
+        url: "{{ route('check.user.status') }}",
+        method: "GET",
+		 headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+		},
+        success: function (response) {
+            console.log("sateesh" , response); // check this in browser console
+            console.log("sateesh",response.logout); // check this in browser console
+
+            if (response.logout === true) {
+                window.location.href = "{{ route('login') }}";
+            }
+        },
+         error: function (xhr) {
+            if (xhr.status === 401) {
+                window.location.href = "{{ route('login') }}";
+            }
+        } 
+    });
+}, 10000); // check every 10 seconds
+
+</script>
+
