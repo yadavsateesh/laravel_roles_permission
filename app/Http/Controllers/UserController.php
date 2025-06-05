@@ -137,6 +137,6 @@ class UserController extends Controller
 		$user->status = !$user->status; 
 		$user->save();
 
-		return redirect()->back()->withSuccess('success', 'User status updated successfully.');
+		return redirect()->back()->withSuccess('User status updated successfully.');
 	}
 }
