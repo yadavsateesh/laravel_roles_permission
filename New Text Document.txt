@@ -1,0 +1,54 @@
+<?php
+echo "<pre>";
+print_r($);
+echo "</pre>";
+die;
+
+echo $this->db->getLastQuery(); die;
+?>
+php spark make:controller Cart  
+php spark migrate
+php spark make:model Try_at_home
+agVrYbZtYEH^aS@BAyPsga#@?4-phXny^tXX5P#wf#UH-BkT
+
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+sudo chmod -R 777 robots.txt
+sudo chmod -R 777 sitemap_jewel_talk.xml
+sudo chmod -R 777 sitemap_jewellers.xml
+sudo chmod -R 777 sitemap_news.xml
+sudo chmod -R 777 sitemap.xml
+sudo chmod -R 777 sitemap_category.xml
+sudo chmod -R 777 Constants.php
+sudo chmod -R 777 templates
+
+Email: chintan.h@kalpcorporate.com
+Password: 12345678
+Password: Karv@228
+Password: Gold@0609
+
+$servername = "godcitymall.cluster-c0iw8bke9z6n.me-south-1.rds.amazonaws.com";
+$username = "goldcitymall";
+$password = "YShGNRMzQaD75Uwk";
+$dbname = "goldcitymall";
+
+php artisan ui:auth
+
+php artisan storage:link
+
+php artisan make:migration create_flights_table
+php artisan make:model Country -m
+php artisan make:model Teacher -mc
+php artisan make:migration edit_flights_table_040120211142 --table=flights
+
+php artisan migrate
+php artisan db:seed --force
+php artisan serve
+composer install
+composer update
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear 
+php artisan view:clear
+php artisan key:generate
+
+COMPOSER_MEMORY_LIMIT=-1 composer require twilio/sdk

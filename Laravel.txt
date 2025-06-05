@@ -1,0 +1,164 @@
+<?php
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+die;
+
+composer required wapmorgan/mp3info (command for get audio/video file details)
+
+composer create-project --prefer-dist laravel/laravel blog
+
+composer require yajra/laravel-datatables-oracle:"^10.3.1"
+composer require yajra/laravel-datatables-oracle:"~8.0"
+composer require yajra/laravel-datatables-oracle
+
+
+composer install
+
+php artisan serve
+
+composer require maatwebsite/excel
+php artisan make:import ImportABC --model=ABC
+php artisan make:export ExportABC --model=ABC
+
+composer require laravel/helpers
+https://github.com/Hesto/multi-auth
+
+php artisan migrate
+
+composer require maatwebsite/excel
+https://github.com/Maatwebsite/Laravel-Excel/issues/1799
+
+dompdf
+
+https://github.com/painlesscode/breeze-multiauth
+
+php artisan make:migration edit_flights_table_040120211142 --table=flights
+$table->string('name')->after('id');
+
+Route::get('/', function () {
+   Artisan::call('storage:link');
+});
+
+composer require laravel/passport
+php artisan migrate
+php artisan passport:install
+composer create-project --prefer-dist laravel/laravel blog "6.*"
+
+/* laravel last query print */
+\DB::enableQueryLog(); // Enable query log
+
+dd(\DB::getQueryLog()); // Show results of log
+
+//update created_at
+DB::table('attempts')->where('ip_address', $request->ip_address)->update(['created_at'=> date('Y-m-d H:i:s')]);
+
+
+sudo chmod -R 777 /var/www/web/app/Controllers
+sudo chmod -R 777 /var/www/web/app/Views
+sudo chmod -R 777 /var/www/web/app/Config/Routes.php
+sudo chmod -R 755 /var/www/web/public/theme/page_js
+sudo chmod -R 755 /var/www/web/public/theme/firebase
+
+php artisan storage:link
+php artisan make:migration create_messages_table
+php artisan make:model Role -m
+php artisan make:controller CommanController 
+php artisan migrate
+php artisan make:seeder PostSeeder
+php artisan db:seed
+php artisan make:migration create_yogapics_table
+
+Multi Auth Login Step:
+composer create-project laravel/laravel:^9.0 login_demo
+composer create-project laravel/laravel login_demo
+composer require hesto/multi-auth
+composer require laravel/helpers
+php artisan multi-auth:install admin -f
+php artisan migrate
+php artisan multi-auth:install user -f
+php artisan multi-auth:install seler -f
+php artisan migrate
+php artisan serve
+php artisan make:migration
+php artisan migrate:fresh
+composer install --ignore-platform-reqs
+
+Single Auth Login Step:
+composer require laravel/ui
+php artisan ui bootstrap --auth
+php artisan migrate
+
+composer create-project laravel/laravel:^8.0 example_stripe
+
+?create_video=881&listing_info_create_web=1
+http://localhost/demo/listing-prop.php
+
+C:\wamp64\www\demo\uploads
+
+http://realestatemarketer.pro/realestate/uploads/video-eLy5zVZn22_304504183526_1024_768_WM_gfBzjJGLPZ-GSwJ4_QCAHMTjqGF.jpg
+save pdf file:
+return PDF::loadHTML('<h1>Test</h1> ')->save('/path//my_stored_file.pdf');
+
+audio command:
+$cmd = 'C:\\ffmpeg\\bin\\ffmpeg.exe -i video.mp4 -i audio.mp3 -c:v copy -c:a aac output.mp4';
+exec($cmd, $output)
+
+============================================================================
+if (!file_exists($folder)) 
+    // Check if the folder doesn't exist
+    mkdir($folder, 0755, true)) 
+       file_put_contents($folder."/".$round_id,stripslashes(json_encode($_REQUEST['log'])));
+	   
+/ code upload in git /
+1. git status
+2. git add .
+3. git commit -m "code upload"
+4. git push origin development
+5. git pull origin development
+
+add class
+$('div').click(function() {
+    var myEm = $(this).attr('data-my-element');
+    //alert(myEm);
+    $('section[data-my-element = '+myEm+']').addClass('clicked');
+	
+==============================================================================
+setup laravel 11 project:-
+composer create-project --prefer-dist laravel/laravel live_wire_demo "11.*"
+composer install
+node install
+npm install
+npm install bootstrap
+npm install jquery
+npm -v
+node -v
+npm run dev
+
+Single Auth Login Step:
+composer require laravel/ui
+php artisan ui bootstrap --auth
+php artisan migrate
+============================================================================================
+live wire setup:
+composer require livewire/livewire
+php artisan make:livewire user
+
+composer create-project laravel/laravel livewire
+php artisan make:migration create_empy_table
+php artisan migrate
+php artisan make:model Emp
+composer require livewire/livewire
+php artisan make:livewire Employees
+==========================================================================
+//Second Highest Salary
+SELECT * 
+FROM emps
+ORDER BY salary DESC 
+LIMIT 1 OFFSET 2;
+
+SELECT * 
+FROM emps
+WHERE salary = (SELECT MAX(salary) 
+                FROM emps
+                WHERE salary < (SELECT MAX(salary) FROM emps));
